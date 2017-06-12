@@ -26,7 +26,7 @@ get '/softcup-twilio-voicemail/handle-gather' do
     end
   elsif params['Digits'] == '2'
   	response = Twilio::TwiML::Response.new do |r|
-      r.Dial '+13105551212'
+      r.Dial '+18009310882'
       r.Say 'The call failed or the remote party hung up. Goodbye.'
     end
   elsif params['Digits'] == '3'
