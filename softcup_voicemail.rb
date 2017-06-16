@@ -8,10 +8,10 @@ require 'twilio-ruby'
 get '/softcup-twilio-voicemail' do
   Twilio::TwiML::Response.new do |r|
   	# r.Play 'http://demo.twilio.com/hellomonkey/monkey.mp3' voice recording here
-    r.Say 'Thank you for call Softcup. Your call is very important to us. Leave a message and we will get back to you as soon as we can.'
+    r.Say 'Thank you for calling Softcup. Your call is very important to us. Leave a message and we will get back to you as soon as we can.'
   	r.Gather :numDigits => '1', :action => '/softcup-twilio-voicemail/handle-gather', :method => 'get' do |g|
       g.Say 'To record a voicemail, press 1.'
-      g.Say 'To Speak with someone at The Flex Company Press 2.'
+      g.Say 'To Speak with someone at The Flex Company, press 2.'
       g.Say 'Press 3 to end this call.'
  	end
   end.text
