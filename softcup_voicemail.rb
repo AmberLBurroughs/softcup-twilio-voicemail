@@ -37,3 +37,9 @@ get '/softcup-twilio-voicemail/handle-gather' do
   end
   response.text
 end
+
+get '/softcup-twilio-voicemail/handle-record' do
+  Twilio::TwiML::Response.new do |r|
+       r.Say 'Thank you, Goodbye.'
+  end.text
+end
